@@ -11,8 +11,10 @@
 #include <stdlib.h>
 #include <signal.h>
 #include "TestLib/stdlib_test/abort_test.h"
+#include "TestLib/math_test/abs_test.h"
 
 #define NUM_PTHREADS 5
+
 int currentOff = 1;
 
 void* say_hello(void* args)
@@ -55,6 +57,8 @@ void runningProgram(int id){
 		case 2:
 			test_fibonacci();
 			break;
+		case 3:
+			test_abs();
 		default:
 			currentOff = 0;
 			printf("正在推出程序");
@@ -66,18 +70,19 @@ int main(void)
 {
 	//int num = NUM_PTHREADS*20;
 	const char *programList = "1.异常终止一个进程\n"
-			"2.斐波那契数列\n";
+			"2.斐波那契数列\n"
+			"3.求整数的绝对值";
 	printf(programList);
 	int id;
 	char *str;
 	while(currentOff){
 		printf("Please enter a number to running this program.\n");
-		scanf("%s",str);
+		scanf("%s", str);
 		id = atoi(str);
 		printf("This is your input value:%s\n",str);
 		runningProgram(id);
 	}
-
+	sleep(10);
 	//pthread_t pthreads[NUM_PTHREADS];
 	//int txt[NUM_PTHREADS];
 
