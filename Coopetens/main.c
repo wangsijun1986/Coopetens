@@ -68,7 +68,6 @@ void runningProgram(int id){
 
 int main(void)
 {
-	//int num = NUM_PTHREADS*20;
 	const char *programList = "1.异常终止一个进程\n"
 			"2.斐波那契数列\n"
 			"3.求整数的绝对值";
@@ -83,12 +82,9 @@ int main(void)
 		runningProgram(id);
 	}
 	sleep(10);
+
 	//pthread_t pthreads[NUM_PTHREADS];
 	//int txt[NUM_PTHREADS];
-
-	/*
-
-	 */
 
 	/*
 	signal(SIGINT, sighandler);
@@ -111,6 +107,7 @@ int main(void)
 		}
 	}
 	*/
+
 	//终止线程
 	//pthread_exit(NULL);
 
