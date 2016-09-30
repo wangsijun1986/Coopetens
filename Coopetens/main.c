@@ -59,6 +59,7 @@ void runningProgram(int id){
 			break;
 		case 3:
 			test_abs();
+			break;
 		default:
 			currentOff = 0;
 			printf("正在推出程序");
